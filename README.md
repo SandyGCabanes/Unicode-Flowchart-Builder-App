@@ -1,16 +1,67 @@
 # Unicode Flowchart Builder App
-This project provides a GUI application for building and displaying Unicode-based flowcharts, allowing users to visually represent processes easily.
+## Python
 
-## Objective
-The primary objective is to offer a user-friendly tool for generating simple flowcharts from textual inputs. It automates the layout and rendering of flowchart steps, eliminating the need for manual drawing or specialized software for basic diagramming needs.  The design emphasizes ease of use, allowing users to define steps, connect them, and indicate decision points or loops through an intuitive graphical interface.
+## ![UI screenshot](uiv12.PNG)
+A lightweight, Tkinter-based GUI for creating Unicode flowcharts — no browser, no complex diagramming tools, just instant, portable text diagrams.
 
-## Automated Output from User Input
-The application automatically constructs a text-based visual representation of the flowchart using Unicode characters based on user input. User inputs each step and specifies if it's a Regular Step or a Merge Step, source (Connect from which step), how the connection should branch (Down or Right arrow), and if it's part of a loop (Additional text box appears where it should loop to.) The output can be directly copied to the clipboard or exported as a .txt file, making it highly portable and compatible across various platforms and documents. 
+---
 
-### Background
-I started creating lots of Unicode-based flowcharts for easy communication of workflows, code workflows, and data pipelines for my own use.  I decided to automate the process given the laborious process of creating flowcharts in draw.io and mermaid.  Both of these require a website to render the charts. My Unicode Flowchart Builder uses python's Tkinter library, addressing the need for a quick and accessible way to create flowcharts without complex tools. It's particularly useful for documenting processes, outlining algorithms, or illustrating workflows where a simple, shareable text-based diagram is enough. It's also effective with AI-assisted coding.  
+## Why This Exists
+- Creating flowcharts in draw.io or Mermaid is slow and requires browser rendering.
+- Needed a fast, shareable, text-based diagram format for workflows, algorithms, and pipelines.
+- Unicode characters make diagrams portable — they work in plain text, emails, code comments, and documentation.
 
-### Managing Expectations
-Design choice:  I decided to forgo the option to include arrows for loops.  Instead, I designed an option to insert text if the next step is part of a loop box. The text will indicate where the loop ends up.
+---
 
-**SGC. Beyond surveys. Data-driven decisions.**
+## What It Does
+- Builds flowcharts from text input — no manual drawing.
+- Automates layout — you define steps, connections, and loops; the app handles spacing and alignment.
+- Exports anywhere — copy to clipboard or save as `.txt` for universal compatibility.
+
+---
+
+## How It Works
+1. Add Steps  
+   - Choose Regular Step or Merge Step.  
+2. Define Connections  
+   - Select the source step and branch direction (Down or Right).  
+3. Handle Loops  
+   - If part of a loop, add a label showing where it returns.  
+4. Generate Output  
+   - App renders a Unicode flowchart instantly.  
+
+---
+
+## Key Features
+- GUI built with Tkinter — no external dependencies.
+- Unicode-based rendering — works in any text environment.
+- Loop-friendly — uses text labels instead of arrows for clarity.
+- Audit-friendly — output is plain text, easy to version-control.
+
+---
+
+## Example Use Cases
+- Documenting code workflows.
+- Outlining data pipelines.
+- Creating process diagrams for reports.
+- Embedding diagrams in AI-assisted coding prompts.
+
+---
+
+## Design Choices
+- No loop arrows — replaced with labeled loop text for simplicity and readability.
+- Add loops manually after creating txt file.
+- Portable output — `.txt` ensures diagrams survive copy-paste across platforms.
+
+---
+
+## Background
+Built to speed up workflow documentation.  
+Instead of wrestling with browser-based tools, this provides a local, instant, reproducible way to create diagrams that can live in:
+- GitHub READMEs
+- Audit documentation
+- Plain-text project notes
+
+---
+
+>SGC. Beyond surveys. Data-driven decisions.
