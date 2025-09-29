@@ -64,4 +64,4 @@ Instead of wrestling with browser-based tools, this provides a local, instant, r
 
 ---
 
->SGC. Beyond surveys. Data-driven decisions.
+>SGC. Beyond surveys. Data-Powered Decisions.
