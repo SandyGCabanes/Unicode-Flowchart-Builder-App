@@ -49,8 +49,11 @@ A lightweight, Tkinter-based GUI for creating Unicode flowcharts — no browser,
 ---
 
 ## Design Choices
+### These are the decisions I made to balance simplicity with usefulness.
 - No loop arrows — replaced with labeled loop text for simplicity and readability.
 - Add loops manually after creating txt file.
+- Two arrow directions - Down and right only for simplicity.
+- Merge step is included for two flows
 - Portable output — `.txt` ensures diagrams survive copy-paste across platforms.
 
 ---
@@ -64,4 +67,4 @@ Instead of wrestling with browser-based tools, this provides a local, instant, r
 
 ---
 
->SGC. Beyond surveys. Data-Powered Decisions.
+>SGC. Data-Powered Decisions.
