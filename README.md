@@ -67,4 +67,6 @@ Instead of wrestling with browser-based tools, this provides a local, instant, r
 
 ---
 
+Block Diagram of [Workflow](https://github.com/SandyGCabanes/Unicode-Flowchart-Builder-App/blob/main/workflow.txt)
+
 >SGC. Data-Powered Decisions.
