@@ -30,8 +30,9 @@ A lightweight, Tkinter-based GUI for creating Unicode flowcharts — no browser,
 3. Handle Loops  
    - If part of a loop, add a label showing where it returns.  
 4. Generate Output  
-   - App renders a Unicode flowchart instantly.  
-
+   - App renders a Unicode flowchart instantly.
+     
+![Demo](https://github.com/SandyGCabanes/Unicode-Flowchart-Builder-App/blob/main/unicode_flowchart_demo.mp4_1.0x_1080px_.gif)
 ---
 
 ## Key Features
