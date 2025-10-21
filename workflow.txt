@@ -1,0 +1,49 @@
+.---------------------------------------------------------------------------------.
+|                             FLOWCHART BUILDER APP (main)                        |
+|=================================================================================|
+| .----------------------------------.   .-------------------------------------.  |
+| |       INPUT PANEL (LEFT)         |   |       OUTPUT PANEL (RIGHT)          |  |
+| |  (Frame: self.input_frame)       |   |   (Frame: self.output_frame)        |  |
+| |----------------------------------|   |-------------------------------------|  |
+| | 1. STEP DEFINITION & CONNECTION  |   | 1. FLOWCHART DISPLAY & RENDERING    |  |
+| |----------------------------------|   |-------------------------------------|  |
+| |                                  |   | [Widget] flowchart_text             |  |
+| | [Widget] start_node_text_input   |   |   (ScrolledText)                    |  |
+| | [Widget] next_node_text_input    |   | [Function] generate_flowchart()     |  |
+| | [Radio] rb_regular/rb_merge      |   |-------------------------------------|  |
+| | [Combo] source_node_combobox     |   | 2. UTILITY ACTIONS                  |  |
+| | [Combo] merge_source1/2_combobox |   |-------------------------------------|  |
+| | [Radio] rb_down/rb_right         |   | [Widget] btn_copy                   |  |
+| | [Check] chk_is_loop              |   | [Function] copy_to_clipboard()      |  |
+| | [Combo] loop_target_combobox     |   | [Widget] btn_export                 |  |
+| |                                  |   | [Function] export_to_txt()          |  |
+| |----------------------------------|   '-------------------------------------'  |
+| | 2. ACTION BUTTONS                |                                            |
+| |----------------------------------|                                            |
+| | [Button] btn_add_start_node      |                                            |
+| | [Function] add_start_node()      |                                            |
+| | [Button] btn_add_step            |                                            |
+| | [Function] add_next_node()       |                                            |
+| | [Button] btn_end_flowchart       |                                            |
+| | [Function] end_flowchart()       |                                            |
+| | [Button] btn_delete_last_step    |                                            |
+| | [Function] delete_last_node()    |                                            |
+| |----------------------------------|                                            |
+| | 3. STATUS & GLOBAL CONTROL       |                                            |
+| |----------------------------------|                                            |
+| | [Widget] status_bar              |                                            |
+| | [Button] btn_reset               |                                            |
+| | [Function] reset_flowchart()     |                                            |
+| '----------------------------------'                                            |
+|=================================================================================|
+| .---------------------------------------------------------------------------.   |
+| |                    SUPPORTING INTERNAL FUNCTIONS (Logic)                  |   |
+| |---------------------------------------------------------------------------|   |
+| | [Function] _update_input_layout() - Manages dynamic visibility of widgets.|   |
+| | [Function] update_source_node_combobox() - Populates source/merge options.|   |
+| | [Function] _update_end_node_combobox() - Populates unconnected end nodes. |   |
+| | [Function] _wrap_text() - Pre-processes user input to fit node width.     |   |
+| | [Function] _update_status() - Updates the `status_bar` widget content.    |   |
+| | [Function] _parse_combobox_selection() - Extracts ID from combobox text.  |   |
+| '---------------------------------------------------------------------------'   |
+'---------------------------------------------------------------------------------'
