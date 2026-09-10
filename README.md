@@ -31,7 +31,18 @@ A lightweight, Tkinter-based GUI for creating Unicode flowcharts — no browser,
    - If part of a loop, add a label showing where it returns.  
 4. Generate Output  
    - App renders a Unicode flowchart instantly.
-     
+
+---
+
+## Design Choices
+### These are the decisions I made to balance simplicity with usefulness.
+- An input panel of the left with input fields, the output rendering on the right panel, real-time.
+- No loop arrows — replaced with labeled loop text for simplicity and readability.
+- Add loops manually after creating txt file (optional).
+- Three arrow directions - Down, right and left only for simplicity.
+- Merge step is included for two flows only.
+- Delete step is allowed only for the most recent, to avoid orphan blocks.
+- Portable output — `.txt` ensures diagrams survive copy-paste across platforms.
 ---
 
 ## Key Features
@@ -48,16 +59,7 @@ A lightweight, Tkinter-based GUI for creating Unicode flowcharts — no browser,
 - Creating process diagrams for reports.
 - Embedding diagrams in AI-assisted coding prompts.
 
----
 
-## Design Choices
-### These are the decisions I made to balance simplicity with usefulness.
-- No loop arrows — replaced with labeled loop text for simplicity and readability.
-- Add loops manually after creating txt file (optional).
-- Three arrow directions - Down, right and left only for simplicity.
-- Merge step is included for two flows only.
-- Delete step is allowed only for the most recent, to avoid orphan blocks.
-- Portable output — `.txt` ensures diagrams survive copy-paste across platforms.
 
 ---
 
