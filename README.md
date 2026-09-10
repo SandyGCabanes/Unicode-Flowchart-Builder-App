@@ -36,13 +36,13 @@ A lightweight, Tkinter-based GUI for creating Unicode flowcharts — no browser,
 
 ## Design Choices
 ### These are the decisions I made to balance simplicity with usefulness.
-- An input panel of the left with input fields, the output rendering on the right panel, real-time.
-- No loop arrows — replaced with labeled loop text for simplicity and readability.
-- Add loops manually after creating txt file (optional).
-- Three arrow directions - Down, right and left only for simplicity.
+- An input panel on the left with input fields, the output rendering on the right panel, real-time.
+- No loop arrows, replaced with labeled loop text for simplicity and readability.
+- Loop arrows can be hand-drawn into the exported .txt afterward, if a visual loop connector is wanted beyond the labeled text.
+- Three arrow directions: Down, Right and Left only for simplicity.
 - Merge step is included for two flows only.
 - Delete step is allowed only for the most recent, to avoid orphan blocks.
-- Portable output — `.txt` ensures diagrams survive copy-paste across platforms.
+- Portable output: `.txt` ensures diagrams survive copy-paste across platforms.
 ---
 
 ## Key Features
