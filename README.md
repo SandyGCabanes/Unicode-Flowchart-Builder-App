@@ -1,9 +1,7 @@
 # Unicode Flowchart Builder App
 ## Python
 
-A lightweight, Tkinter-based GUI for creating Unicode flowcharts — no browser, no complex diagramming tools, just instant, portable text diagrams.
-
-
+A lightweight, Tkinter-based GUI for creating Unicode flowcharts: no browser, no complex diagramming tools, just instant, portable text diagrams.
 
 ![Start UI](https://github.com/SandyGCabanes/Unicode-Flowchart-Builder-App/blob/main/flowchart_demo_full.gif)
 ---
@@ -11,26 +9,31 @@ A lightweight, Tkinter-based GUI for creating Unicode flowcharts — no browser,
 ## Problem
 - Creating flowcharts in draw.io or Mermaid is slow and requires browser rendering.
 - Needed a fast, shareable, text-based diagram format for workflows, algorithms, and pipelines.
-- Unicode characters make diagrams portable — they work in plain text, emails, code comments, and documentation.
+- Unicode characters make diagrams portable. They work in plain text, emails, code comments, and documentation.
 
 ---
 
 ## Solution
-- Build flowcharts from text input — no manual drawing.
-- Automates layout — you define steps, connections, and loops; the app handles spacing and alignment.
-- Exports anywhere — copy to clipboard or save as `.txt` for universal compatibility.
+- Build flowcharts from text input : no manual drawing.
+- Automates layout : user defines steps, connections, and loops; the app handles spacing and alignment.
+- Exports anywhere : copy to clipboard or save as `.txt` for universal compatibility.
 
 ---
 
 ## How It Works
-1. Add Steps  
-   - Choose Regular Step or Merge Step.  
-2. Define Connections  
-   - Select the source step and branch direction (Down, Right or Left).  
+1. Add Start button. Output is generated real-time on the right panel.
+2. Add Steps  
+   - Choose Regular Step or Merge Step  
+   - Select source (1 for Regular, 2 for Merge step)
+   - Select branch direction (Down, Right or Left)
+   - Add Step
 3. Handle Loops  
-   - If part of a loop, add a label showing where it returns.  
-4. Generate Output  
-   - App renders a Unicode flowchart instantly.
+   - If part of a loop, add a label showing where it returns.
+   - If need explicit arrow to loop back, add manually after exporting the file.
+4. Delete step if needed
+   - Only the latest step is allowed to be deleted
+5. Add End step  
+6. Export as text or copy to clipboard
 
 ---
 
@@ -48,7 +51,7 @@ A lightweight, Tkinter-based GUI for creating Unicode flowcharts — no browser,
 ## Key Features
 - GUI built with Tkinter — no external dependencies.
 - Unicode-based rendering — works in any text environment.
-- Loop-friendly — uses text labels instead of arrows for clarity.
+- Loop-friendly — uses text labels instead of arrows that loop back for a clean look.
 - Audit-friendly — output is plain text, easy to version-control.
 
 ---
@@ -57,9 +60,6 @@ A lightweight, Tkinter-based GUI for creating Unicode flowcharts — no browser,
 - Documenting code workflows.
 - Outlining data pipelines.
 - Creating process diagrams for reports.
-- Embedding diagrams in AI-assisted coding prompts.
-
-
 
 ---
 
