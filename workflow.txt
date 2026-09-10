@@ -1,3 +1,6 @@
+# Workflow
+
+```
 .---------------------------------------------------------------------------------.
 |                             FLOWCHART BUILDER APP (main)                        |
 |=================================================================================|
@@ -13,12 +16,18 @@
 | | [Radio] rb_regular/rb_merge      |   |-------------------------------------|  |
 | | [Combo] source_node_combobox     |   | 2. UTILITY ACTIONS                  |  |
 | | [Combo] merge_source1/2_combobox |   |-------------------------------------|  |
-| | [Radio] rb_down/rb_right         |   | [Widget] btn_copy                   |  |
+| | [Radio] rb_down/rb_right/rb_left |   | [Widget] btn_copy                   |  |
 | | [Check] chk_is_loop              |   | [Function] copy_to_clipboard()      |  |
 | | [Combo] loop_target_combobox     |   | [Widget] btn_export                 |  |
 | |                                  |   | [Function] export_to_txt()          |  |
 | |----------------------------------|   '-------------------------------------'  |
-| | 2. ACTION BUTTONS                |                                            |
+| | 2. END-OF-FLOWCHART SELECTION    |                                            |
+| |----------------------------------|                                            |
+| | [Widget] end_node_combobox       |                                            |
+| |   (auto-filled w/ unconnected    |                                            |
+| |    steps; multi-select join)     |                                            |
+| |----------------------------------|                                            |
+| | 3. ACTION BUTTONS                |                                            |
 | |----------------------------------|                                            |
 | | [Button] btn_add_start_node      |                                            |
 | | [Function] add_start_node()      |                                            |
@@ -29,7 +38,7 @@
 | | [Button] btn_delete_last_step    |                                            |
 | | [Function] delete_last_node()    |                                            |
 | |----------------------------------|                                            |
-| | 3. STATUS & GLOBAL CONTROL       |                                            |
+| | 4. STATUS & GLOBAL CONTROL       |                                            |
 | |----------------------------------|                                            |
 | | [Widget] status_bar              |                                            |
 | | [Button] btn_reset               |                                            |
@@ -39,11 +48,52 @@
 | .---------------------------------------------------------------------------.   |
 | |                    SUPPORTING INTERNAL FUNCTIONS (Logic)                  |   |
 | |---------------------------------------------------------------------------|   |
-| | [Function] _update_input_layout() - Manages dynamic visibility of widgets.|   |
+| | [Function] _update_input_lawet() - Manages dynamic visibility of widgets. |   |
 | | [Function] update_source_node_combobox() - Populates source/merge options.|   |
+| | [Function] update_loop_target_combobox() - Populates loop-target options. |   |
 | | [Function] _update_end_node_combobox() - Populates unconnected end nodes. |   |
+| | [Function] _update_delete_button_state() - Enables/disables delete button.|   |
 | | [Function] _wrap_text() - Pre-processes user input to fit node width.     |   |
 | | [Function] _update_status() - Updates the `status_bar` widget content.    |   |
 | | [Function] _parse_combobox_selection() - Extracts ID from combobox text.  |   |
+| | [Function] _compute_child_position() - Single source of truth for where a |   |
+| |   Down/Right/Left branch places its child box relative to its source.     |   |
 | '---------------------------------------------------------------------------'   |
 '---------------------------------------------------------------------------------'
+```
+
+# HOW THE CONNECTING LINES GET DRAWN
+```
+------------------------------------------------------------------------
+Regular step:                          Merge step (two sources):
+
+   [ Source Step ]                      [ Source A ]     [ Source B ]
+         |                                    \               /
+         v  (Down)                             \             /
+   [ New Step ]                                  \-----------/
+                                                        |
+   [ Source Step ] ----> [ New Step ]                  v
+        (Right)                                   [ New Step ]
+
+   [ New Step ] <---- [ Source Step ]
+        (Left)
+
+The app calculates the new box's position from the source + direction we
+picked, then fills in the line between them with │ or ─ characters and caps
+it with an arrowhead: ▼ down, ► right, ◄ left. A merge step draws a line
+from each source down to a shared joint (┴), then one line onward to the
+new box.
+```
+
+## Glossary
+
+| Term | Full Name | What It Is |
+|---|---|---|
+| **Widget** | — | General term for any on-screen element we interact with — a catch-all covering text boxes, dropdowns, buttons, checkboxes, etc. When we see "Widget" alone in a diagram, it usually means a text field or display area that doesn't fit the more specific categories below. |
+| **Radio** | Radio Button | A round selector where we pick exactly one option from a small group. Selecting one automatically deselects the others in that group. |
+| **Combo** | Combobox / Dropdown | A field that shows one selected value but expands into a list of choices when clicked. Same thing as a "dropdown menu." |
+| **Check** | Checkbox | A square box that toggles on/off independently of other checkboxes.  Unlike a radio button, checking one doesn't uncheck others.  Used only for the loop option. |
+| **Button** | Push Button | A clickable control that triggers an action immediately when pressed (e.g., "Add Step," "Reset Flowchart"). |
+
+
+
